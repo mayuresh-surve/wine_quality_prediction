@@ -39,3 +39,7 @@
 ### Run the prediction without docker
 1. ssh to the EMR cluster
 2. run the command `spark-submit wine_prediction.py --test_file ./ValidationDataset.csv`
+
+### Run the prediction with docker 
+1. docker pull browdex/wine-prediction
+2. docker run browdex/wine-prediction
