@@ -31,7 +31,7 @@
 2. This will log you into the EMR cluster created.
 3. If you run the command `ls` you should be able to see all the files you copied from the local machine. 
 4. Run the following command to copy files from master node to HDFS
-    - hadoop fs -put \<file-name> /user/hadoop/\<file-name>
+    - `hadoop fs -put \<file-name> /user/hadoop/\<file-name>`
 5. Repeat this for each file
 6. Launch training model using command `spark-submit wine_training.py`
 7. This will store ML model to the s3 bucket. 
@@ -40,6 +40,9 @@
 1. ssh to the EMR cluster
 2. run the command `spark-submit wine_prediction.py --test_file ./ValidationDataset.csv`
 
-### Run the prediction with docker 
-1. docker pull browdex/wine-prediction
-2. docker run browdex/wine-prediction
+### Run the prediction with docker
+1. sudo systemctl start docker
+2. sudo systemctl enable docker
+3. sudo systemctl status docker 
+4. docker pull browdex/wine-prediction
+5. docker run browdex/wine-prediction

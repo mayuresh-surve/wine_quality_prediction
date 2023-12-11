@@ -62,7 +62,7 @@ def get_predictions(model, df):
 def run(test_file):
     df = read_csv(test_file)
     df, total_columns = preprocess(df)
-    model = load_model("s3://winequalityprediction/models/")
+    model = load_model("./rf/")
     df = get_predictions(model, df)
     return df, total_columns
 
@@ -82,7 +82,7 @@ def print_f1(df):
 # parser = argparse.ArgumentParser(description='Wine Quality prediction')
 # parser.add_argument('--test_file', required=True, help='please provide test file path you can provide s3 path or local file path')
 # args = parser.parse_args()
-df, total_columns = run("s3://winequalitypredictionValidationDataset.csv")
+df, total_columns = run("./ValidationDataset.csv")
 print_f1(df)
 
 # %%

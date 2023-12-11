@@ -25,7 +25,7 @@ WORKDIR /wineapp
 
 COPY wine_prediction_docker.py /wineapp/ 
 COPY ValidationDataset.csv /wineapp/
-COPY models/ /wineapp/
+ADD models/ /wineapp/
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
